@@ -9,8 +9,13 @@ def cadastrar_produto():
 
 def salva_produto(produto):
     with open("produtos.txt", "a" , encoding="utf-8") as arquivo:
-        linha =f"{produto[0]};{produto[1]};{produto[2]}\n"
+        linha =f"{produto[0]}; {produto[1]}; {produto[2]}\n"
         arquivo.wirte(linha)
-def listar_produtos():
+
+def listar_produtos ():
     try:
-        with open("produtos.txt", "r", encoding="utf-8)as arquivo
+        with open("produtos.txt", "r", encoding="utf-8")as arquivo:
+            for linha in arquivo:
+                nome, preco, categoria = linha.strip().strip(";")
+                print(f"produto: {nome}  | )
+                
